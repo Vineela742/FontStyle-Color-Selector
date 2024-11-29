@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font, Color, and Background Selector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Color and font Selector</h1>
+
+    <div class="container">
+        <div class="options">
+            <h3>Font Colors</h3>
+            <div class="grid">
+                <script>
+                    const colors = [
+                        "#DC143C", "#4B0082", "#007FFF", "#7FFF00", "#008080", "#FF7F50", "#FF00FF", "#00FF00", "#8E4585", "#808000", 
+                        "#00FFFF", "#800000", "#E0115F", "#CCCCFF", "#FFBF00", "#50C878", "#E6E6FA", "#0047AB", "#FFDAB9", "#98FF98",
+                         "#FFDB58", "#40E0D0", "#F4C430", "#FF007F", "#FF9505", "#800020", "#FFEF00", "#708090", "#FF00FF", , "#704214"
+                       
+                    ];
+
+                    document.write(
+                        colors.map(color => 
+                            `<div class="color-box" style="--color: ${color}" onclick="changeColor('${color}')"></div>`
+                        ).join("")
+                    );
+                </script>
+            </div>
+
+            <h3>Background colors</h3>
+            <div class="grid">
+                <script>
+                    const bgColors = [
+                      "#DC143C", "#4B0082", "#007FFF", "#7FFF00", "#008080", "#FF7F50", "#FF00FF", "#00FF00", "#8E4585", "#808000", 
+                      "#00FFFF", "#800000", "#E0115F", "#CCCCFF", "#FFBF00", "#50C878", "#E6E6FA", "#0047AB", "#FFDAB9", "#98FF98", 
+                      "#FFDB58", "#40E0D0", "#F4C430", "#FF007F", "#FF9505", "#800020", "#FFEF00", "#708090", "#FF00FF", "#007BA7", 
+                    ];
+
+                    document.write(
+                        bgColors.map(bg => 
+                            `<div class="bg-box" style="--bg: ${bg}" onclick="changeTextBackground('${bg}')"></div>`
+                        ).join("")
+                    );
+                </script>
+            </div>
+
+            <h3>Font style</h3>
+            <div class="grid">
+                <script>
+                    const fonts = [
+                        "Arial", "Courier New'", "Georgia", "Times New Roman", "Verdana",
+                        "Tahoma", "Comic Sans MS", "Impact", "Trebuchet MS'", "Lucida Console'",
+                        "Lucida Sans Unicode'", "Garamond", "Palatino Linotype'", "Montserrat", "Roboto",
+                        "Lato", "Oswald", "Poppins", "Open Sans", "Raleway",
+                        "Source Sans Pro", "Ubuntu", "Merriweather", "'PT Sans'", "Nunito",
+                        "Inconsolata", "Fira Sans", "Bitter", "Playfair Display", "Noto Sans"
+                    ];
+
+                    document.write(
+                        fonts.map(font => 
+                            `<div class="font-box" style="--font: ${font}" onclick="changeFont('${font}')">${font.split(' ')[0]}</div>`
+                        ).join("")
+                    );
+                </script>
+            </div>
+
+           
+        </div>
+
+        <div class="textbox">
+            <h1 contenteditable="true" id="text" style="color: black ; "></h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+   
+</body>
+</html>
